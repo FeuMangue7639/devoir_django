@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Médias - Consultation</title>
+</head>
+<body>
+    <h1>Liste des Médias</h1>
+
+    <h2>Livres</h2>
+    <ul>
+        {% for livre in livres %}
+            <li>{{ livre.titre }} - {{ livre.auteur }}</li>
+        {% empty %}
+            <li>Aucun livre disponible.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>DVD</h2>
+    <ul>
+        {% for dvd in dvds %}
+            <li>{{ dvd.titre }} - {{ dvd.realisateur }}</li>
+        {% empty %}
+            <li>Aucun DVD disponible.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>CD</h2>
+    <ul>
+        {% for cd in cds %}
+            <li>{{ cd.titre }} - {{ cd.artiste }}</li>
+        {% empty %}
+            <li>Aucun CD disponible.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Jeux de plateau</h2>
+    <ul>
+        {% for jeu in jeux_de_plateau %}
+            <li>{{ jeu.titre }}</li>
+        {% empty %}
+            <li>Aucun jeu de plateau disponible.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

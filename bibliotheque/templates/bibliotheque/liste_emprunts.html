@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Emprunts</title>
+</head>
+<body>
+    <button onclick="window.location.href='{% url 'bibliotheque:home' %}'" style="padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Retour à l'Accueil
+    </button>
+    <h1>Liste des Emprunts</h1>
+    <table>
+        <tr>
+            <th>Membre</th>
+            <th>Média</th>
+            <th>Date d'emprunt</th>
+            <th>Date de retour</th>
+        </tr>
+        {% for emprunt in emprunts %}
+        <tr>
+            <td>{{ emprunt.membre.nom }}</td>
+            <td>{{ emprunt.media.titre }}</td>
+            <td>{{ emprunt.date_emprunt }}</td>
+            <td>{{ emprunt.date_retour }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <button onclick="window.location.href='{% url 'bibliotheque:ajouter_emprunt' %}'" style="padding: 10px 15px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Ajouter un Emprunt
+    </button>
+</body>
+</html>

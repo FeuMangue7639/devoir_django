@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un Emprunt</title>
+</head>
+<body>
+    <h1>Ajouter un Emprunt</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="membre">Membre :</label>
+        <select name="membre" required>
+            {% for membre in membres %}
+                <option value="{{ membre.id }}">{{ membre.nom }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="media">Média :</label>
+        <select name="media" required>
+            {% for media in medias %}
+                <option value="{{ media.id }}">{{ media.titre }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Ajouter l'emprunt</button>
+    </form>
+
+    {% if erreur %}
+        <p style="color: red;">{{ erreur }}</p>
+    {% endif %}
+</body>
+</html>

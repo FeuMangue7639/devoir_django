@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un Média</title>
+</head>
+<body>
+    <h1>Ajouter un Nouveau Média</h1>
+    <p>Si un des champs doit être null, écrire 'vide'</p>
+
+    <form method="POST" action="{% url 'bibliotheque:ajouter_media' %}">
+        {% csrf_token %}
+
+        <label for="titre">Titre :</label>
+        <input type="text" name="titre" required><br><br>
+
+        <label for="media_type">Type :</label>
+        <select name="media_type" required>
+            <option value="">-- Sélectionnez un type de média --</option>
+            <option value="Livre">Livre</option>
+            <option value="DVD">DVD</option>
+            <option value="CD">CD</option>
+            <option value="JeuDePlateau">Jeu de Plateau</option>
+        </select><br><br>
+
+        <div id="auteur-field">
+            <label for="auteur">Auteur :</label>
+            <input type="text" name="auteur" required><br><br>
+        </div>
+
+        <div id="realisateur-field">
+            <label for="realisateur">Réalisateur :</label>
+            <input type="text" name="realisateur" required><br><br>
+        </div>
+
+        <div id="artiste-field">
+            <label for="artiste">Artiste :</label>
+            <input type="text" name="artiste" required><br><br>
+        </div>
+
+        <button type="submit">Ajouter le média</button>
+    </form>
+</body>
+</html>
+

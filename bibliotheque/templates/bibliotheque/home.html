@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page d'accueil</title>
+</head>
+<body>
+    <h1>Bienvenue à la Médiathèque</h1>
+    <p>Ceci est la page d'accueil pour la bibliothécaire.</p>
+    <a href="{% url 'bibliotheque:liste_membres' %}">Voir la liste des membres</a>
+    <a href="{% url 'bibliotheque:liste_medias' %}">Voir la liste des medias</a>
+    <a href="{% url 'bibliotheque:liste_emprunts' %}">Voir la liste des emprunts</a>
+</body>
+</html>
